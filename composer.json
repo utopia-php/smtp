@@ -1,0 +1,46 @@
+{
+    "name": "utopia-php/smtp",
+    "description": "Lite & fast micro PHP SMTP server abstraction that is **easy to use**.",
+    "type": "library",
+    "keywords": ["php", "framework", "upf", "utopia", "smtp", "email"],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "scripts": {
+        "format": "./vendor/bin/pint --config pint.json",
+        "format:check": "./vendor/bin/pint --test --config pint.json",
+        "analyze": "./vendor/bin/phpstan analyse --level max -c phpstan.neon src tests",
+        "test": "./vendor/bin/phpunit --configuration phpunit.xml"
+    },
+    "authors": [
+        {
+            "name": "Eldad Fux",
+            "email": "eldad@appwrite.io"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Utopia\\SMTP\\": "src/SMTP"}
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Unit\\Utopia\\": "tests/unit/"
+        }
+    },
+    "require": {
+        "php": ">=8.3",
+        "utopia-php/span": "1.1.*",
+        "utopia-php/telemetry": "*",
+        "utopia-php/validators": "0.*"
+    },
+    "require-dev": {
+        "swoole/ide-helper": "5.1.8",
+        "phpunit/phpunit": "12.5.*",
+        "laravel/pint": "1.29.*",
+        "phpstan/phpstan": "2.0.*"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "tbachert/spi": true
+        }
+    }
+}

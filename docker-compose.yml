@@ -1,0 +1,16 @@
+services:
+  smtp-server:
+    image: smtp-dev
+    build:
+      context: .
+    command: [ "sh", "-c", "php /usr/src/code/tests/resources/server.php" ]
+    volumes:
+      - ./src:/usr/src/code/src
+      - ./tests:/usr/src/code/tests
+      - ./phpunit.xml:/usr/src/code/phpunit.xml
+    networks:
+      - smtp
+    ports:
+      - '2525:2525/tcp'
+networks:
+  smtp:

@@ -1,0 +1,8 @@
+parameters:
+  scanDirectories:
+    - vendor/swoole/ide-helper
+  excludePaths:
+    - tests/resources
+    - tests/unit/SMTP/Connection/SwooleTest.php
+    - tests/unit/SMTP/Server/SwooleServerTest.php
+    - vendor
